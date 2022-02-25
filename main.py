@@ -51,6 +51,21 @@ def check(myList):
         return "Balanced"
 
 
+def main():
+    while True:
+        user_command = input('''Введите:
+         input - для ручного ввода строки
+         demo - для демонстрации работы
+         quit - для выхода \n ''')
+        if user_command == 'demo':
+            for seq in bal_list + unbal_list:
+                print(f'{seq:<30}{check(seq)}')
+        elif user_command == 'input':
+            manual_string = input('Введите строку:')
+            print(f'{manual_string:<30}{check(manual_string)} \n')
+        elif user_command == 'quit':
+            break
+
+
 if __name__ == '__main__':
-    for seq in bal_list + unbal_list:
-        print(f'{seq:<30}{check(seq)}')
+    main()
